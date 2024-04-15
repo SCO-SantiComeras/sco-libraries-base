@@ -1,2 +1,11 @@
 /node_modules
 npm-debug*
+
+docker-compose.yml
+docker-compose.prod.yml
+docker-images-clean.sh
+docker-soft-clean.sh
+docker-system-clean.sh
+get-changes.sh
+get-repositories.sh
+run-docker.sh
