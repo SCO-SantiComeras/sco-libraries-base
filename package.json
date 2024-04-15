@@ -1,5 +1,5 @@
 {
-  "name": "sco-telegram-bot-tester",
+  "name": "sco-libraries-base",
   "version": "0.0.0",
   "scripts": {
     "install-frontend": "cd ./sco-angular-components-base && npm i && cd ..",
