@@ -31,5 +31,37 @@
   (itemClick)="onClickMenuItem($event)"
   (displayResize)="onDisplayResize($event)"
 >       
-  <router-outlet content-app></router-outlet>       
+  <router-outlet content-app>
+    <sco-pdf-viewer *ngIf="pdfViewerService.show()"
+      [positionAbsolute]="true"
+      [headerPosition]="constantsService.ScoPdfViewerConstants.HEADER_POSITION_LEFT"
+
+      [showComebackButton]="true"
+      [comebackButtonIcon]="'fa fa-arrow-left'"
+      [comebackButtonTransparent]="true"
+
+      [showDownloadButton]="true"
+      [downloadButtonIcon]="'fa fa-download'"
+      [downloadButtonTransparent]="true"
+
+      [scoPdfViewer]="pdfViewerService.scoPdfViewer()"
+      [initialZoom]="constantsService.ScoPdfViewerConstants.DEFAULT_ZOOM"
+
+      [showZoomButtons]="true"
+      [plusZoomButtonIcon]="'fa fa-plus'"
+      [plusZoomButtonTransparent]="true"
+      [minusZoomButtonIcon]="'fa fa-minus'"
+      [minusZoomButtonTransparent]="true"
+      [restoreZoomButtonIcon]="'fa fa-refresh'"
+      [restoreZoomButtonTransparent]="true"
+      
+      [showTotalPages]="true"
+      [totalPagesOnRightSide]="true"
+      [labelTotalPages]="'label.pdf-viewer.component.pages' | scoTranslate"
+
+      (onGoBack)="onPdfViewerEvent('onGoBack')"
+      (onDownload)="onPdfViewerEvent('onDownload', $event)"
+      (onLoad)="onPdfViewerEvent('onLoad', $event)">
+    </sco-pdf-viewer>
+  </router-outlet>       
 </sco-app>

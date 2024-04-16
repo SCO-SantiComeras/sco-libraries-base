@@ -1,7 +1,7 @@
 import { CACHE_CONSTANTS } from './constants/cache.constants';
 import { Component, ViewEncapsulation } from '@angular/core';
 import { WebsocketsService } from './websockets/websockets.service';
-import { MenuItem, ScoCacheService, ScoConfigService, ScoConstantsService, ScoDisplayResize, ScoThemeService } from 'sco-angular-components';
+import { MenuItem, ScoCacheService, ScoConfigService, ScoConstantsService, ScoDisplayResize, ScoPdfViewerService, ScoThemeService, ScoToastService, ScoTranslateService } from 'sco-angular-components';
 import { MENU_LOGOUT } from './modules/shared/menu/menu.constants';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
@@ -24,10 +24,13 @@ export class AppComponent {
   public CACHE_CONSTANTS = CACHE_CONSTANTS;
 
   constructor(
+    public readonly pdfViewerService: ScoPdfViewerService,
     public readonly cacheService: ScoCacheService,
     public readonly themeService: ScoThemeService,
     public readonly configService: ScoConfigService,
     public readonly constantsService: ScoConstantsService,
+    private readonly translateService: ScoTranslateService,
+    private readonly toastService: ScoToastService,
     private readonly websocketsService: WebsocketsService,
     private readonly menuService: MenuService,
     private readonly router: Router,
@@ -35,7 +38,7 @@ export class AppComponent {
   ) {
     this.setTheme();
     this.websocketsService.connectWebSocket();
-
+    
     if (this.store.selectSnapshot(AuthState.loggedUser)) {
       this.cacheService.setElement(CACHE_CONSTANTS.MENU_ITEMS, this.menuService.selectMenu(this.store.selectSnapshot(AuthState.loggedUser)));
     } else {
@@ -67,5 +70,37 @@ export class AppComponent {
 
   onDisplayResize($event: ScoDisplayResize) {
     this.store.dispatch(new SetDisplayMode({ scoDisplayResize: $event })).subscribe();
+  }
+
+  onPdfViewerEvent(event: string, value: boolean = false): void {
+    if (event == 'onGoBack') {
+      this.pdfViewerService.unLoadPdf();
+      return;
+    }
+
+    if (event == 'onDownload') {
+      if (value) {
+        this.toastService.addSuccessMessage(
+          this.translateService.getTranslate('label.success'),
+          this.translateService.getTranslate('label.pdf-viewer.component.onDownload')
+        );
+      } else {
+        this.toastService.addErrorMessage(
+          this.translateService.getTranslate('label.error'),
+          this.translateService.getTranslate('label.pdf-viewer.component.onDownload.error')
+        );
+      }
+      return;
+    }
+
+    if (event == 'onLoad') {
+      if (value) {
+        this.toastService.addSuccessMessage(
+          this.translateService.getTranslate('label.success'),
+          this.translateService.getTranslate('label.pdf-viewer.component.onLoad')
+        );
+        return;
+      }
+    }
   }
 }
