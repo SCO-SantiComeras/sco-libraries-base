@@ -23,7 +23,6 @@
     "label.modify": "Modify",
     "label.created.at": "Created at",
     "label.updated.at": "Updated at",
-    "label.pages": "Pages",
 
     "label.actions.create": "Create",
     "label.actions.update": "Edit",
@@ -47,6 +46,7 @@
     "label.menu.permissions": "Permissions",
     "label.menu.options": "Options",
     "label.menu.resume": "Summary",
+    "label.menu.pdf-example": "Pdf example",
 
     "label.validation.patterns.email": "Email is not valid",
     "label.validation.patterns.password": "Password must be at least 8 characters, with 1 lowercase, 1 uppercase, 1 number, and 1 special character",
@@ -198,5 +198,11 @@
     "label.resume.component.resume.1": "Welcome back",
     "label.resume.component.resume.2": "It's currently",
     "label.resume.component.resume.3": "on",
-    "label.resume.component.info.title": "User Information"
+    "label.resume.component.info.title": "User Information",
+
+    "label.pdf-viewer.component.pages": "Pages",
+    "label.pdf-viewer.component.onload": "Unnable to load pdf file",
+    "label.pdf-viewer.component.onDownload": "Pdf file downloaded successfully",
+    "label.pdf-viewer.component.onDownload.error": "Error trying to download pdf file",
+    "label.pdf-viewer.component.onLoad": "Pdf file loaded successfully"
 }

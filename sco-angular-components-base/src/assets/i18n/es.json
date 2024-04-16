@@ -23,7 +23,6 @@
     "label.modify": "Modificar",
     "label.created.at": "Creado en",
     "label.updated.at": "Actualizado en",
-    "label.pages": "Páginas",
 
     "label.actions.create": "Crear",
     "label.actions.update": "Editar",
@@ -47,6 +46,7 @@
     "label.menu.permissions": "Permisos",
     "label.menu.options": "Opciones",
     "label.menu.resume": "Resumen",
+    "label.menu.pdf-example": "Pdf example",
 
     "label.validation.patterns.email": "El email no es válido",
     "label.validation.patterns.password": "La contraseña debe tener mínimo 8 caracteres, 1 mínuscula, 1 mayúscula, 1 número y 1 caracter especial",
@@ -198,5 +198,11 @@
     "label.resume.component.resume.1": "Bienvenido de nuevo",
     "label.resume.component.resume.2": "Actualmente son las",
     "label.resume.component.resume.3": " del día ",
-    "label.resume.component.info.title": "Información de usuario"
+    "label.resume.component.info.title": "Información de usuario",
+
+    "label.pdf-viewer.component.pages": "Páginas",
+    "label.pdf-viewer.component.onload": "No se pudo cargar el fichero pdf",
+    "label.pdf-viewer.component.onDownload": "Fichero pdf descargado con éxito",
+    "label.pdf-viewer.component.onDownload.error": "Error intentando descargar el fichero pdf",
+    "label.pdf-viewer.component.onLoad": "Fichero pdf cargado con éxito"
 }
