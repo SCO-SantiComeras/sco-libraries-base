@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Eliminar librería y copiar el compilado nuevo
-echo 'Borrando antigua carpeta "./node_modules/sco-nestjs-utilities"'
-rm -rf ./node_modules/sco-nestjs-utilities
-echo 'Copiando nuevo contenido de "./../sco-nestjs-utilities/dist/sco-nestjs-utilities/" a "./node_modules/sco-nestjs-utilities"'
-cp -r ./../sco-nestjs-utilities/dist/libs/sco-nestjs-utilities/ ./node_modules/sco-nestjs-utilities
+echo 'Borrando antigua carpeta "./sco-nestjs-utilities-base/node_modules/sco-nestjs-utilities"'
+rm -rf ./sco-nestjs-utilities-base/node_modules/sco-nestjs-utilities
+echo 'Copiando nuevo contenido de "./../sco-nestjs-utilities/dist/sco-nestjs-utilities/" a "./sco-nestjs-utilities-base/node_modules/sco-nestjs-utilities"'
+cp -r ./../sco-nestjs-utilities/dist/libs/sco-nestjs-utilities/ ./sco-nestjs-utilities-base/node_modules/sco-nestjs-utilities
 echo 'Copia completada'
 
 # Modificar versión del package json por version 'test'
-archivo="./node_modules/sco-nestjs-utilities/package.json"
+archivo="./sco-nestjs-utilities-base/node_modules/sco-nestjs-utilities/package.json"
 nuevo_contenido='  "version": "test",'
 
 # Verificar si el archivo existe

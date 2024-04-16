@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Eliminar librería y copiar el compilado nuevo
-echo 'Borrando antigua carpeta "./node_modules/sco-angular-components"'
-rm -rf ./node_modules/sco-angular-components
-echo 'Copiando nuevo contenido de "./../sco-angular-components/dist/sco-angular-components/" a "./node_modules/sco-angular-components"'
-cp -r ./../sco-angular-components/dist/sco-angular-components/ ./node_modules/sco-angular-components
+echo 'Borrando antigua carpeta "./sco-angular-components-base/node_modules/sco-angular-components"'
+rm -rf ./sco-angular-components-base/node_modules/sco-angular-components
+echo 'Copiando nuevo contenido de "./../sco-angular-components/dist/sco-angular-components/" a "./sco-angular-components-base/node_modules/sco-angular-components"'
+cp -r ./../sco-angular-components/dist/sco-angular-components/ ./sco-angular-components-base/node_modules/sco-angular-components
 echo 'Copia completada'
 
 # Modificar versión del package json por version 'test'
-archivo="./node_modules/sco-angular-components/package.json"
+archivo="./sco-angular-components-base/node_modules/sco-angular-components/package.json"
 nuevo_contenido='  "version": "test",'
 
 # Verificar si el archivo existe
