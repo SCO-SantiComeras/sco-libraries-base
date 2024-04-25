@@ -11,7 +11,7 @@ Su objetivo principal es servir como una sólida base de inicio para nuevos proy
 - Personalización del Tema: Los usuarios tienen la opción de personalizar el tema de la aplicación, permitiéndoles adaptar la interfaz según sus preferencias y necesidades.
 - Visualización de PDFs: Utiliza el componente 'sco-pdfviewer' para visualizar archivos PDF directamente dentro de la aplicación, facilitando la visualización de documentos importantes.
 - Gestión de Administradores: Además de la gestión de usuarios estándar, los administradores tienen la capacidad de gestionar roles de usuarios y los permisos asociados a cada rol, brindando un control completo sobre el acceso y la seguridad de la aplicación.
-- Incluye una batería de distintos servicios a poder utilizar:
+- Incluye una batería de distintos servicios, pipes, componentes, módulos... a poder utilizar libremente durante el desarrollo:
     - Frontend:
         - JoinPipe
         - HasPermissionsPipe
